@@ -4,6 +4,10 @@ package com.example.simplebuttonlistener
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,29 +15,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val etToast = findViewById<EditText>(R.id.et_toast)
-        val etTv = findViewById<EditText>(R.id.et_tv)
-        val etNewActivity = findViewById<EditText>(R.id.et_new_activity)
+    }
 
-        val btnTv = findViewById<Button>(R.id.btn_tv)
-        val btnToast = findViewById<Button>(R.id.btn_toast)
-        val btnNewActivity = findViewById<Button>(R.id.btn_new_activity)
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
 
-        val display = findViewById<TextView>(R.id.tv_display)
+    }
 
-        btnTv.setOnClickListener {
-            display.text = etTv.text
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.home -> startActivity(Intent(this, Home::class.java))
+            R.id.help -> startActivity(Intent(this, Help::class.java))
+            R.id.about -> startActivity(Intent(this, About::class.java))
         }
-
-        btnToast.setOnClickListener {
-            Toast.makeText(this, "${etToast.text}", Toast.LENGTH_LONG).show()
-        }
-
-        btnNewActivity.setOnClickListener {
-            val intent = Intent(this, DisplayText::class.java)
-            intent.putExtra("text", "${etNewActivity.text}")
-            startActivity(intent)
-        }
-
+        return super.onOptionsItemSelected(item)
     }
 }

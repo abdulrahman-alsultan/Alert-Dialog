@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleButtonListener">
-        <activity android:name=".DisplayText"></activity>
+        <activity android:name=".Help"></activity>
+        <activity android:name=".About" />
+        <activity android:name=".Home" />
+        <activity android:name=".DisplayText" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
