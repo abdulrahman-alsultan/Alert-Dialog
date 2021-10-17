@@ -8,13 +8,32 @@
     android:id="@+id/constraint"
     >
 
-    <Button
-        android:id="@+id/xml_btn"
+    <EditText
+        android:id="@+id/et_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="xml"
+        android:layout_marginTop="30sp"
+        android:hint="Enter anything"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="30sp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
